@@ -1,0 +1,33 @@
+<candidates>
+    <candidate sr ='23'>
+        <name>
+            <firstname>John</firstname> 
+            <lastname>Carter</lastname>
+        </name>
+        <admissiondate>
+            <day>25</day>
+            <month>23</month>
+            <year>2015<year>
+    </candidate>
+     <candidate sr ='29'>
+        <name>
+            <firstname>Bob</firstname> 
+            <lastname>Marshal</lastname>
+        </name>
+        <admissiondate>
+            <day>13</day>
+            <month>1</month>
+            <year>1999<year>
+    </candidate>
+    <candidate sr ='35'>
+        <name>
+            <firstname>Clark</firstname> 
+            <lastname> Kent</lastname>
+        </name>
+        <admissiondate>
+            <day>17</day>
+            <month>6</month>
+            <year>2005<year>
+        </admissiondate>
+    </candidate>
+</candidates>
