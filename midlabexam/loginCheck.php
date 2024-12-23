@@ -18,12 +18,9 @@
             echo "Invalid user";
         }
         }
-         else{
-
-                }
-    }else{
+    else{
       
         header('location: login.html');
     }
- 
+}
 ?>
