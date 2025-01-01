@@ -1,5 +1,7 @@
 <?php
 session_start();
+include('../model/usermodel.php');
+
 
 if (isset($_REQUEST['submit'])) {
    
@@ -10,22 +12,14 @@ if (isset($_REQUEST['submit'])) {
     $newemail = $_REQUEST['email'];
 
     
-    foreach ($_SESSION['users'] as &$user) {
-        if ($user['id'] == $id_to_edit) {
-           
-
-            $user['username'] =  $newname;
-            $user['password'] = $newpass;
-            $user['email'] = $newemail;            
-            
-          
+   $update = updateUser($id_to_edit,$newname,$newemail,$newpass);
+   if ($update != null){
            header('Location: ../view/userlist.php'); 
-            exit(); 
+        }
+        else{
+           echo "$id_to_edit not update";
         }
     }
-          
-    unset($user); 
-}
 else {
     echo "Error: User not found or could not delete.";
 }

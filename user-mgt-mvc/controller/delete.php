@@ -6,15 +6,13 @@ if (isset($_REQUEST['id'])) {
     $ID_to_remove = $_REQUEST['id'];
        
     $status = deleteUser($ID_to_remove);
-    if($status
-    ){
-
-        echo "DELETED";
+    if($status){
+      header('location: ../view/userlist.php');
     }
     else {
-      echo "$ID_to_remove cant ... ERROR";
+      echo "$ID_to_remove cant remove ... ERROR";
     }
-    //header('location: ../view/userlist.php');
+   
     }
 
     else{

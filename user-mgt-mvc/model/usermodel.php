@@ -30,10 +30,18 @@
 
 
 
-    function getUser($id){
+    function getUser($id) {
         $con = getConnection();
-        $sql = "select * from users where username='{$id}'";
+        $sql = "SELECT * FROM users WHERE id = '{$id}'";
+        $result = mysqli_query($con, $sql);
+        
+        if ($result && mysqli_num_rows($result) > 0) {
+            return mysqli_fetch_assoc($result);
+        } else {
+            return null; 
+        }
     }
+    
 
     function getAllUser(){
         $con = getConnection(); 
@@ -50,14 +58,17 @@
         return $users;
     }
 
-    function updateUser($user){
-        getUser($id);
+    function updateUser($id,$username,$email,$password){
+        $con = getConnection();
+        $sql = "UPDATE users SET username= '{$username}', email= '{$email}', password='{$password}' WHERE id = '{$id}'";
+        $result = mysqli_query($con, $sql);
 
+        return $result;
     }
 
     function deleteUser($id){
         $con = getConnection();
-        $sql = "DELETE from users where id = '{ $id} '";
+        $sql = "DELETE from users where id = '{$id}'";
 
         return mysqli_query($con,$sql);
     }
